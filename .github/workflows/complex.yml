@@ -1,0 +1,30 @@
+name: Complex
+
+on:
+  push:
+
+jobs:
+  ubuntus:
+    runs-on: ubuntu-latest
+    steps:
+      - run: date
+
+  windows:
+    runs-on: windows-latest
+    steps:
+      - run: date
+
+  macos:
+    runs-on: macos-latest
+    steps:
+      - run: date
+
+  dependens_jobs:
+    needs: [ubuntus, windows, macos]  # Fixed job names to match correctly
+    runs-on: macos-latest  # Fixed typo: changed "run-on" to "runs-on"
+    steps:
+      - run: date  # Added a valid run command to prevent errors
+
+  
+     
+     
